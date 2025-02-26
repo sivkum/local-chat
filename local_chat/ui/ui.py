@@ -369,31 +369,40 @@ class PrivateGptUi:
             title=UI_TAB_TITLE,
             theme=gr.themes.Soft(primary_hue=slate),
             css=".logo { "
-            "display:flex;"
-            "background-color: #6abdff;"
-            "height: 80px;"
-            "border-radius: 8px;"
-            "align-content: center;"
-            "justify-content: center;"
-            "align-items: center;"
-            "}"
-            ".logo img { height: 25% }"
-            ".contain { display: flex !important; flex-direction: column !important; }"
-            "#component-0, #component-3, #component-10, #component-8  { height: 100% !important; }"
-            "#chatbot { flex-grow: 1 !important; overflow: auto !important;}"
-            "#col { height: calc(100vh - 112px - 16px) !important; }"
-            "hr { margin-top: 1em; margin-bottom: 1em; border: 0; border-top: 1px solid #FFF; }"
-            ".avatar-image { background-color: antiquewhite; border-radius: 2px; }"
-            ".footer { text-align: center; margin-top: 20px; font-size: 14px; display: flex; align-items: center; justify-content: center; }"
-            ".footer-skillpedia-link { display:flex; margin-left: 5px; text-decoration: auto; color: var(--body-text-color); }"
-            ".footer-skillpedia-link:hover { color: #C7BAFF; }"
-            ".footer-skillpedia-ico { height: 20px; margin-left: 5px; background-color: antiquewhite; border-radius: 2px; }",
+               "display:flex;"
+               "background-color: #aebbd3;"  # Silver background
+               "height: 80px;"
+               "border-radius: 8px;"
+               "align-content: center;"
+               "justify-content: flex-start;"  # Left alignment
+               "align-items: center;"
+               "padding-left: 20px;"  # Added spacing
+               "}"
+               ".left-panel { "
+               "background-color: #d1d6de !important;"  # Carbon Silver
+               "color: white !important;"
+               "padding: 10px !important;"
+               "}"
+               ".left-panel label, .left-panel .gr-textbox, .left-panel .gr-radio { "
+               "color: orange !important;"
+               "}"
+               ".logo img { height: 25% }"
+               ".contain { display: flex !important; flex-direction: column !important; }"
+               "#component-0, #component-3, #component-10, #component-8  { height: 100% !important; }"
+               "#chatbot { flex-grow: 1 !important; overflow: auto !important;}"
+               "#col { height: calc(100vh - 112px - 16px) !important; }"
+               "hr { margin-top: 1em; margin-bottom: 1em; border: 0; border-top: 1px solid #FFF; }"
+               ".avatar-image { background-color: antiquewhite; border-radius: 2px; }"
+               ".footer { text-align: center; margin-top: 20px; font-size: 14px; display: flex; align-items: center; justify-content: center; }"
+               ".footer-skillpedia-link { display:flex; margin-left: 5px; text-decoration: auto; color: var(--body-text-color); }"
+               ".footer-skillpedia-link:hover { color: #C7BAFF; }"
+               ".footer-skillpedia-ico { height: 20px; margin-left: 5px; background-color: antiquewhite; border-radius: 2px; }",
         ) as blocks:
             with gr.Row():
-                gr.HTML(f"<div class='logo'/><img src={logo_svg} alt=LocalChat>My Local ChatBot</div")
+                gr.HTML(f"<div class='logo'/><img src={logo_svg} alt=LocalChat>MY LOCAL CHATBOT</div")
 
             with gr.Row(equal_height=False):
-                with gr.Column(scale=3):
+                with gr.Column(scale=3,elem_classes=["left-panel"]):
                     default_mode = self._default_mode
                     mode = gr.Radio(
                         [mode.value for mode in MODES],
