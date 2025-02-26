@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+title: LocalChat
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - name: LocalChat by SkillPedia 
+    address: care@skillpedia.ai
+    website: 'https://www.skillpedia.ai/'
+repository-code: 'https://github.com/Sangwan70/local-chat'
+license: Apache-2.0
+date-released: '2023-05-02'
